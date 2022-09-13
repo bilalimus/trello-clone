@@ -9,7 +9,7 @@ const AddList = () => {
 
   const addListHandler = () => {
     dispatch(dataActions.setList({ id: Math.random(), title: "", card: [] }));
-    dispatch(uiActions.toggleAddList({ set: true }));
+    dispatch(uiActions.toggleAddList({ set: false }));
     dispatch(uiActions.toggleAddCard({ set: false }));
   };
 

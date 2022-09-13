@@ -1,11 +1,12 @@
 import Lists from "./Lists";
-import AddList from "../AddList"
+import AddList from "../AddList";
 import { useSelector } from "react-redux";
 
 const Main = () => {
   const { data } = useSelector((state) => state.data);
   const { addList } = useSelector((state) => state.ui);
 
+  
   return (
     <>
       {data.map((el, index) => {
@@ -19,7 +20,8 @@ const Main = () => {
           />
         );
       })}
-      {!addList && <AddList />}
+      {data.length < 1 && <AddList />}
+      {addList &&  <AddList />}
     </>
   );
 };

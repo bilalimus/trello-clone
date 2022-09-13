@@ -2,6 +2,8 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { dataActions } from "../../store/dataSlice";
+import trash from "../../assets/trash.png"
+import styled from "styled-components";
 
 const ListTitle = ({ index, id }) => {
   const [inputText, setInputText] = useState("");
@@ -20,11 +22,19 @@ const ListTitle = ({ index, id }) => {
   }
 
   return (
-    <div style={{display: "flex"}}>
+    <TitleDiv>
       <input onBlur={blurHandler} onChange={changeHandler} type="text" />
-      <span onClick={deleteClickHandler} style={{cursor: "pointer"}}>X</span>
-    </div>
+      <img src={trash} alt="trash" width={20} onClick={deleteClickHandler}/>
+      {/* <span onClick={deleteClickHandler} style={{cursor: "pointer"}}>X</span> */}
+    </TitleDiv>
   );
 };
 
 export default ListTitle;
+
+const TitleDiv = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+`
+

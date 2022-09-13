@@ -11,14 +11,14 @@ const ButtonAdd = ({ index, id }) => {
     if (addCard) {
       dispatch(dataActions.setCard({ index }));
     }
-    dispatch(uiActions.toggleAddCard({ set: true }));
-    dispatch(uiActions.toggleAddList({ set: false }));
+    dispatch(uiActions.toggleAddCard({set: true}));
+    dispatch(uiActions.toggleAddList({set: true}));
   };
 
   return (
     <div>
       <button onClick={buttonAddClickHandler}>
-        {addList ? "Add list" : "Add card"}
+        {!addList ? "Add list" : "Add card"}
       </button>
     </div>
   );

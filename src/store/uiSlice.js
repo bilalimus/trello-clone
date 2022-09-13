@@ -12,9 +12,9 @@ const uiSlice = createSlice({
     toggleAddList(state, action) {
       state.addList = action.payload.set;
     },
-    toggleAddCard(state, action){
-      state.addCard = action.payload.set
-    }
+    toggleAddCard(state, action) {
+      state.addCard = action.payload.set;
+    },
   },
 });
 

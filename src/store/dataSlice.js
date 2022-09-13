@@ -1,29 +1,29 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-let array = [{
-  id: 1,
-  title: "test1",
-  card: [
-    {id: 1,
-    text: "SOME TEXT"},
-    {id: 2,
-    text: "SOME2 text"}
-  ]
-},
-{
-  id: 2,
-  title: "test2",
-  card: [
-    {id: 1,
-    text: "SOME11 TEXT"},
-    {id: 2,
-    text: "SOME22 text"}
-  ]
-},]
+// let array = [{
+//   id: 1,
+//   title: "test1",
+//   card: [
+//     {id: 1,
+//     text: "SOME TEXT"},
+//     {id: 2,
+//     text: "SOME2 text"}
+//   ]
+// },
+// {
+//   id: 2,
+//   title: "test2",
+//   card: [
+//     {id: 1,
+//     text: "SOME11 TEXT"},
+//     {id: 2,
+//     text: "SOME22 text"}
+//   ]
+// },]
 
 
 const initialState = {
-  data: array,
+  data: [],
 };
 
 const dataSlice = createSlice({
@@ -46,7 +46,6 @@ const dataSlice = createSlice({
     deleteCard(state, action){
       console.log(action.payload)
       const filterData = state.data[action.payload.index].card.filter((el) => el.id !== action.payload.id)
-      console.log(filterData);
       state.data[action.payload.index].card = filterData
       
     }

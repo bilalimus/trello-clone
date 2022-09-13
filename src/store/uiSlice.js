@@ -10,6 +10,7 @@ const uiSlice = createSlice({
   initialState: initialState,
   reducers: {
     toggleAddList(state, action) {
+      console.log(action);
       state.addList = action.payload.set;
     },
     toggleAddCard(state, action) {

@@ -1,12 +1,15 @@
 import React from "react";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { dataActions } from "../../store/dataSlice";
 import trash from "../../assets/trash.png"
 import styled from "styled-components";
+import { uiActions } from "../../store/uiSlice";
 
 const ListTitle = ({ index, id }) => {
   const [inputText, setInputText] = useState("");
+  const {data} = useSelector(state => state.data)
+  console.log(data, 'in listTitle');
   const dispatch = useDispatch()
 
   const changeHandler = (e) => {
@@ -18,7 +21,11 @@ const ListTitle = ({ index, id }) => {
   }
 
   const deleteClickHandler = () => {
+    if(data.length == 1){
+      dispatch(uiActions.toggleAddList({set: false}));
+    }
     dispatch(dataActions.deleteList({index, id}))
+    
   }
 
   return (

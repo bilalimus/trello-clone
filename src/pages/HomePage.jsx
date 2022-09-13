@@ -86,4 +86,5 @@ const NavBar = styled.div`
 
 const MainDiv = styled.div`
   display: flex;
+  margin-left: 50px;
 `;

@@ -21,7 +21,7 @@ const ListTitle = ({ index, id }) => {
   }
 
   const deleteClickHandler = () => {
-    if(data.length == 1){
+    if(data.length === 1){
       dispatch(uiActions.toggleAddList({set: false}));
     }
     dispatch(dataActions.deleteList({index, id}))

@@ -10,7 +10,7 @@ const HomePage = () => {
   const dispatch = useDispatch();
   const { isAuth, email } = useAuth();
 
-  return true ? (
+  return isAuth ? (
     <>
       <NavBar>
         <LogoDiv>
